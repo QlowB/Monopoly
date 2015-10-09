@@ -243,6 +243,14 @@ public class GameConfigurePanel extends ActionPanel implements
 	}
 
 	/**
+	 * 
+	 * @return weather the online checkbox is selected
+	 */
+	public boolean isOnline() {
+		return this.chckbxOnline.isSelected();
+	}
+
+	/**
 	 * sets a new port and writes it into {@link #portField}
 	 * 
 	 * @param port
@@ -265,7 +273,11 @@ public class GameConfigurePanel extends ActionPanel implements
 	public MonopolyGameConfiguration getConfiguration(boolean withBoard) {
 		MonopolyGameConfiguration mgc = new MonopolyGameConfiguration();
 
-		mgc.setPort(getPort());
+		if (isOnline())
+			mgc.setPort(getPort());
+		else
+			mgc.setPort(-1);
+
 		if (withBoard) {
 			String boardPath = getBoardPath();
 			InputStream ressource = Ressources.getRessource(boardPath);
