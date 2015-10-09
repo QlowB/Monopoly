@@ -1,0 +1,2 @@
+US Edition: standard_edition.xml
+Swiss Edition: swiss_edition.xml

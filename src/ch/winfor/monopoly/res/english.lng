@@ -1,0 +1,101 @@
+// language file for English (UTF-8)
+!language_name		= English
+
+// main menu
+start game			= Start Game
+preferences			= Preferences
+exit				= Exit
+back				= Back
+
+// preferences
+language			= Language
+ok					= OK
+apply				= Apply
+cancel				= Cancel
+
+// main menu
+welcome_text		= <html><body><h2>Welcome to QlowB's Monopoly</h2><br><br>Enter the world of pure Monopoly fun!</body></html>
+
+// configure
+player name			= Player Name
+piece color			= Piece Color
+remove player		= Remove Player
+
+player				= Player
+add player			= Add Player
+remove this player	= Remove this Player
+
+human				= Human Player
+computer			= Computer Player
+network				= Network Player
+
+enter_ip_etc		= Enter ip address and port number of a server to connect to it!
+ip					= IP
+port				= Port
+connect				= Connect
+err_connection		= Error: Connection lost.
+could_not_connect	= Error: Could not connect to server.
+
+// buy house
+buy house			= Buy House
+
+// buy property
+buy property		= Buy Property
+don't buy property	= Don't Buy Property
+
+prop_announce		= You can buy a property:\s
+
+// cast dice
+cast dice			= Cast Dice
+
+// draw card
+prompt_draw			= You have to draw a card from a stack.
+draw card			= Draw Card
+
+// end turn
+you have taken...	= You have taken your turn.
+buy houses & hotels	= Buy Houses & Hotels
+end turn			= End Turn
+
+// pay rent
+pay rent			= Pay Rent
+
+// pay tax
+pay tax				= Pay Tax
+
+// follow card
+you_must_follow		= Now you must follow the card's instructions.
+play card			= Play Card
+
+// game
+game				= Game
+create game			= Create Game
+join game			= Join Game
+online				= Online
+choose board		= Choose Board
+
+// game control
+whose_turn_before	= It's\s
+whose_turn_after	= 's turn.
+
+// browse
+players				= Players
+properties			= Properties
+
+with				= With
+houses				= Houses
+price				= Price
+rent				= Rent
+x dice roll			= x Dice Roll
+if_rr_owned			= If
+railroads_owned		= railroads owned
+
+money				= Money
+
+// error
+error				= Error
+please_more_than_zero_players = Please specify some players.
+
+// menu
+view				= View
+zoom				= Zoom

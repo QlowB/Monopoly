@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<MonopolyBoard>
+	<Info>
+		<Flank size="10" />
+		<StartupMoney amount="30000" />
+		<Currency prefix="Fr. " suffix=".-" />
+		<Hotel houseValue="5" />
+	</Info>
+	<Monopolies>
+		<Monopoly name="Braun" color="#A00000" />
+		<Monopoly name="Hellblau" color="#B4B4FF" />
+		<Monopoly name="Violett" color="#E03790" />
+		<Monopoly name="Orange" color="#FFC800" />
+		<Monopoly name="Rot" color="#FF0000" />
+		<Monopoly name="Gelb" color="#FFFF00" />
+		<Monopoly name="Grün" color="#00FF00" />
+		<Monopoly name="Blau" color="#0000FF" />
+	</Monopolies>
+
+	<Fields>
+		<Field type="Start" caption="Los">
+			<!-- money received when passing start -->
+			<PassMoney amount="4000" />
+			<!-- money received when landing on start -->
+			<VisitMoney amount="4000" />
+		</Field>
+
+		<Field type="Property" caption="Chur Kornplatz">
+			<Price value="1200" />
+			<Monopoly name="Braun" />
+			<HousePrice value="1000" />
+			<Mortgage value="600" />
+			<RentTable>
+				<Rent houses="0" value="40" />
+				<Rent houses="1" value="200" />
+				<Rent houses="2" value="600" />
+				<Rent houses="3" value="1800" />
+				<Rent houses="4" value="3200" />
+				<Rent houses="5" value="5000" />
+			</RentTable>
+		</Field>
+
+		<Field type="DrawCard" caption="Kanzlei - Chancellerie">
+		</Field>
+
+		<Field type="Property" caption="Schaffhausen Vordergasse">
+			<Price value="1200" />
+			<Monopoly name="Braun" />
+			<HousePrice value="1000" />
+			<Mortgage value="600" />
+			<RentTable>
+				<Rent houses="0" value="80" />
+				<Rent houses="1" value="400" />
+				<Rent houses="2" value="1200" />
+				<Rent houses="3" value="3600" />
+				<Rent houses="4" value="6400" />
+				<Rent houses="5" value="9000" />
+			</RentTable>
+		</Field>
+
+		<Field type="Tax" caption="Einkommensteuer">
+			<Tax value="4000" />
+		</Field>
+
+		<Field type="Railroad" caption="Vereinigte Privatbahnen">
+			<Price value="4000" />
+			<Mortgage value="2000" />
+			<RentTable>
+				<Rent railroads="1" value="500" />
+				<Rent railroads="2" value="1000" />
+				<Rent railroads="3" value="2000" />
+				<Rent railroads="4" value="4000" />
+			</RentTable>
+		</Field>
+
+		<Field type="Property" caption="Aarau Rathausplatz">
+			<Price value="2000" />
+			<Monopoly name="Hellblau" />
+			<HousePrice value="1000" />
+			<Mortgage value="1000" />
+			<RentTable>
+				<Rent houses="0" value="120" />
+				<Rent houses="1" value="600" />
+				<Rent houses="2" value="1800" />
+				<Rent houses="3" value="5400" />
+				<Rent houses="4" value="8000" />
+				<Rent houses="5" value="11000" />
+			</RentTable>
+		</Field>
+
+		<Field type="DrawCard" caption="Chance">
+		</Field>
+
+		<Field type="Property" caption="Neuenburg Place Purry">
+			<Price value="2000" />
+			<Monopoly name="Hellblau" />
+			<HousePrice value="1000" />
+			<Mortgage value="1000" />
+			<RentTable>
+				<Rent houses="0" value="120" />
+				<Rent houses="1" value="600" />
+				<Rent houses="2" value="1800" />
+				<Rent houses="3" value="5400" />
+				<Rent houses="4" value="8000" />
+				<Rent houses="5" value="11000" />
+			</RentTable>
+		</Field>
+
+		<Field type="Property" caption="Thun Hauptgasse">
+			<Price value="2400" />
+			<Monopoly name="Hellblau" />
+			<HousePrice value="1000" />
+			<Mortgage value="1200" />
+			<RentTable>
+				<Rent houses="0" value="160" />
+				<Rent houses="1" value="800" />
+				<Rent houses="2" value="2000" />
+				<Rent houses="3" value="6000" />
+				<Rent houses="4" value="9000" />
+				<Rent houses="5" value="12000" />
+			</RentTable>
+		</Field>
+
+		<Field type="Jail" caption="Gefängnis">
+		</Field>
+
+		<Field type="Property" caption="Basel Steinen-Vorstadt">
+			<Price value="2800" />
+			<Monopoly name="Violett" />
+			<HousePrice value="2000" />
+			<Mortgage value="1400" />
+			<RentTable>
+				<Rent houses="0" value="200" />
+				<Rent houses="1" value="1000" />
+				<Rent houses="2" value="3000" />
+				<Rent houses="3" value="9000" />
+				<Rent houses="4" value="12500" />
+				<Rent houses="5" value="15000" />
+			</RentTable>
+		</Field>
+
+		<Field type="Company" caption="Elektrizitats-Werke">
+			<Price value="3000" />
+			<Mortgage value="1500" />
+			<RentTable>
+				<Rent companies="1" multiplicator="40" />
+				<Rent companies="2" multiplicator="100" />
+			</RentTable>
+		</Field>
+
+		<Field type="Property" caption="Solothurn Hauptgasse">
+			<Price value="2800" />
+			<Monopoly name="Violett" />
+			<HousePrice value="2000" />
+			<Mortgage value="1400" />
+			<RentTable>
+				<Rent houses="0" value="200" />
+				<Rent houses="1" value="1000" />
+				<Rent houses="2" value="3000" />
+				<Rent houses="3" value="9000" />
+				<Rent houses="4" value="12500" />
+				<Rent houses="5" value="15000" />
+			</RentTable>
+		</Field>
+
+		<Field type="Property" caption="Lugano Via Nassa">
+			<Price value="3200" />
+			<Monopoly name="Violett" />
+			<HousePrice value="2000" />
+			<Mortgage value="1600" />
+			<RentTable>
+				<Rent houses="0" value="240" />
+				<Rent houses="1" value="1200" />
+				<Rent houses="2" value="3600" />
+				<Rent houses="3" value="10000" />
+				<Rent houses="4" value="14000" />
+				<Rent houses="5" value="18000" />
+			</RentTable>
+		</Field>
+
+		<Field type="Railroad" caption="Vereinigte Bergbahnen AG">
+			<Price value="4000" />
+			<Mortgage value="2000" />
+			<RentTable>
+				<Rent railroads="1" value="500" />
+				<Rent railroads="2" value="1000" />
+				<Rent railroads="3" value="2000" />
+				<Rent railroads="4" value="4000" />
+			</RentTable>
+		</Field>
+
+		<Field type="Property" caption="Biel Nidaugasse">
+			<Price value="3600" />
+			<Monopoly name="Orange" />
+			<HousePrice value="2000" />
+			<Mortgage value="1800" />
+			<RentTable>
+				<Rent houses="0" value="280" />
+				<Rent houses="1" value="1400" />
+				<Rent houses="2" value="4000" />
+				<Rent houses="3" value="11000" />
+				<Rent houses="4" value="15000" />
+				<Rent houses="5" value="19000" />
+			</RentTable>
+		</Field>
+
+		<Field type="DrawCard" caption="Kanzlei - Chancellerie">
+		</Field>
+
+		<Field type="Property" caption="Freiburg Bahnhofstraße">
+			<Price value="3600" />
+			<Monopoly name="Orange" />
+			<HousePrice value="2000" />
+			<Mortgage value="1800" />
+			<RentTable>
+				<Rent houses="0" value="280" />
+				<Rent houses="1" value="1400" />
+				<Rent houses="2" value="4000" />
+				<Rent houses="3" value="11000" />
+				<Rent houses="4" value="15000" />
+				<Rent houses="5" value="19000" />
+			</RentTable>
+		</Field>
+
+		<Field type="Property" caption="La Chaux-De-Fonds Ave. L.-Robert ">
+			<Price value="4000" />
+			<Monopoly name="Orange" />
+			<HousePrice value="2000" />
+			<Mortgage value="2000" />
+			<RentTable>
+				<Rent houses="0" value="320" />
+				<Rent houses="1" value="1600" />
+				<Rent houses="2" value="4400" />
+				<Rent houses="3" value="12000" />
+				<Rent houses="4" value="16000" />
+				<Rent houses="5" value="20000" />
+			</RentTable>
+		</Field>
+
+		<Field type="FreeParking" caption="Frei Parken">
+		</Field>
+
+		<Field type="Property" caption="Winterthur Bahnhofplatz">
+			<Price value="4400" />
+			<Monopoly name="Rot" />
+			<HousePrice value="3000" />
+			<Mortgage value="2200" />
+			<RentTable>
+				<Rent houses="0" value="360" />
+				<Rent houses="1" value="1800" />
+				<Rent houses="2" value="5000" />
+				<Rent houses="3" value="14000" />
+				<Rent houses="4" value="17500" />
+				<Rent houses="5" value="21000" />
+			</RentTable>
+		</Field>
+
+		<Field type="DrawCard" caption="Chance">
+		</Field>
+
+		<Field type="Property" caption="St. Gallen Marktplatz">
+			<Price value="4400" />
+			<Monopoly name="Rot" />
+			<HousePrice value="3000" />
+			<Mortgage value="2200" />
+			<RentTable>
+				<Rent houses="0" value="360" />
+				<Rent houses="1" value="1800" />
+				<Rent houses="2" value="5000" />
+				<Rent houses="3" value="14000" />
+				<Rent houses="4" value="17500" />
+				<Rent houses="5" value="21000" />
+			</RentTable>
+		</Field>
+
+		<Field type="Property" caption="Bern Bundesplatz">
+			<Price value="4800" />
+			<Monopoly name="Rot" />
+			<HousePrice value="3000" />
+			<Mortgage value="2400" />
+			<RentTable>
+				<Rent houses="0" value="400" />
+				<Rent houses="1" value="2000" />
+				<Rent houses="2" value="6000" />
+				<Rent houses="3" value="15000" />
+				<Rent houses="4" value="19000" />
+				<Rent houses="5" value="22000" />
+			</RentTable>
+		</Field>
+
+		<Field type="Railroad" caption="Überlandbahnen">
+			<Price value="4000" />
+			<Mortgage value="2000" />
+			<RentTable>
+				<Rent railroads="1" value="500" />
+				<Rent railroads="2" value="1000" />
+				<Rent railroads="3" value="2000" />
+				<Rent railroads="4" value="4000" />
+			</RentTable>
+		</Field>
+
+		<Field type="Property" caption="Luzern Weggisgaße">
+			<Price value="5200" />
+			<Monopoly name="Gelb" />
+			<HousePrice value="3000" />
+			<Mortgage value="2600" />
+			<RentTable>
+				<Rent houses="0" value="440" />
+				<Rent houses="1" value="2200" />
+				<Rent houses="2" value="6600" />
+				<Rent houses="3" value="16000" />
+				<Rent houses="4" value="19500" />
+				<Rent houses="5" value="23000" />
+			</RentTable>
+		</Field>
+
+		<Field type="Property" caption="Zürich Rennweg">
+			<Price value="5200" />
+			<Monopoly name="Gelb" />
+			<HousePrice value="3000" />
+			<Mortgage value="2600" />
+			<RentTable>
+				<Rent houses="0" value="440" />
+				<Rent houses="1" value="2200" />
+				<Rent houses="2" value="6600" />
+				<Rent houses="3" value="16000" />
+				<Rent houses="4" value="19500" />
+				<Rent houses="5" value="23000" />
+			</RentTable>
+		</Field>
+
+		<Field type="Company" caption="Wasserwerke">
+			<Price value="150" />
+			<Mortgage value="75" />
+			<RentTable>
+				<Rent companies="1" multiplicator="40" />
+				<Rent companies="2" multiplicator="100" />
+			</RentTable>
+		</Field>
+
+		<Field type="Property" caption="Lausanne Rue De Bourg">
+			<Price value="5600" />
+			<Monopoly name="Gelb" />
+			<HousePrice value="3000" />
+			<Mortgage value="2800" />
+			<RentTable>
+				<Rent houses="0" value="480" />
+				<Rent houses="1" value="2400" />
+				<Rent houses="2" value="7200" />
+				<Rent houses="3" value="17000" />
+				<Rent houses="4" value="20500" />
+				<Rent houses="5" value="24000" />
+			</RentTable>
+		</Field>
+
+		<Field type="GoToJail" caption="Gehen Sie In Das Gefängnis">
+		</Field>
+
+		<Field type="Property" caption="Basel Freie Strasse">
+			<Price value="6000" />
+			<Monopoly name="Grün" />
+			<HousePrice value="4000" />
+			<Mortgage value="3000" />
+			<RentTable>
+				<Rent houses="0" value="520" />
+				<Rent houses="1" value="2600" />
+				<Rent houses="2" value="7800" />
+				<Rent houses="3" value="18000" />
+				<Rent houses="4" value="22000" />
+				<Rent houses="5" value="25500" />
+			</RentTable>
+		</Field>
+
+		<Field type="Property" caption="Genf Rue De La Croix-D'Or">
+			<Price value="6000" />
+			<Monopoly name="Grün" />
+			<HousePrice value="4000" />
+			<Mortgage value="3000" />
+			<RentTable>
+				<Rent houses="0" value="520" />
+				<Rent houses="1" value="2600" />
+				<Rent houses="2" value="7800" />
+				<Rent houses="3" value="18000" />
+				<Rent houses="4" value="22000" />
+				<Rent houses="5" value="25500" />
+			</RentTable>
+		</Field>
+
+		<Field type="DrawCard" caption="Kanzlei - Chancellerie">
+		</Field>
+
+		<Field type="Property" caption="Bern Spitalgaße">
+			<Price value="6400" />
+			<Monopoly name="Grün" />
+			<HousePrice value="4000" />
+			<Mortgage value="3200" />
+			<RentTable>
+				<Rent houses="0" value="560" />
+				<Rent houses="1" value="3000" />
+				<Rent houses="2" value="9000" />
+				<Rent houses="3" value="20000" />
+				<Rent houses="4" value="24000" />
+				<Rent houses="5" value="28000" />
+			</RentTable>
+		</Field>
+
+		<Field type="Railroad" caption="Vereinigte Schwebebahnen">
+			<Price value="4000" />
+			<Mortgage value="2000" />
+			<RentTable>
+				<Rent railroads="1" value="500" />
+				<Rent railroads="2" value="1000" />
+				<Rent railroads="3" value="2000" />
+				<Rent railroads="4" value="4000" />
+			</RentTable>
+		</Field>
+
+		<Field type="DrawCard" caption="Chance">
+		</Field>
+
+		<Field type="Property" caption="Lausanne Place Stfrancois">
+			<Price value="7000" />
+			<Monopoly name="Blau" />
+			<HousePrice value="4000" />
+			<Mortgage value="3500" />
+			<RentTable>
+				<Rent houses="0" value="700" />
+				<Rent houses="1" value="3500" />
+				<Rent houses="2" value="10000" />
+				<Rent houses="3" value="22000" />
+				<Rent houses="4" value="26000" />
+				<Rent houses="5" value="30000" />
+			</RentTable>
+		</Field>
+
+		<Field type="Tax" caption="Zusatzsteuer">
+			<Tax value="2000" />
+		</Field>
+
+		<Field type="Property" caption="Zürich Paradeplatz">
+			<Price value="8000" />
+			<Monopoly name="Blau" />
+			<HousePrice value="4000" />
+			<Mortgage value="4000" />
+			<RentTable>
+				<Rent houses="0" value="1000" />
+				<Rent houses="1" value="4000" />
+				<Rent houses="2" value="12000" />
+				<Rent houses="3" value="28000" />
+				<Rent houses="4" value="34000" />
+				<Rent houses="5" value="40000" />
+			</RentTable>
+		</Field>
+	</Fields>
+
+	<Cards>
+		<Stack name="Kanzlei - Chancellerie" color="#FFFFC0">
+			<Card type="AdvanceTo" fieldIndex="0">
+				Vorwärts zum
+				&amp;laquo;Start&amp;raquo;.
+				&lt;br>&lt;br>
+				En route pour le
+				&amp;laquo;Start&amp;raquo;.
+			</Card>
+			<Card type="GetMoney" value="2000">
+				Du erhältst eine Jahresrente von Fr.
+				2000.- &lt;br>&lt;br>
+				On t'alloue une rente annuelle de Fr. 2000.-
+			</Card>
+			<Card type="GetMoney" value="2000">
+				Du machst eine Erbschaft und
+				erhältst Fr. 2000.- &lt;br>&lt;br>
+				Grâce à une héritage, tu touches
+				Fr. 2000.-
+			</Card>
+			<Card type="GetMoney" value="400">
+				Du erhältst Steuerrückvergütung Fr.
+				400.- &lt;br>&lt;br>
+				Le fisc rembourse Fr. 400.-
+			</Card>
+			<Card type="GoToJail" value="75">
+				Auf direktem Weg ins Gefängnis.
+				(Nicht über &amp;laquo;Start&amp;raquo;.
+				Honorar nicht zahlar)
+				&lt;br>&lt;br>
+				Direcement en prison. (Sans passer par le
+				&amp;laquo;Start&amp;raquo;.
+				Ne touche point de prime)
+			</Card>
+			<Card type="PayMoney" value="1000">
+				Zahle für Arztrechnung Fr. 1000.-
+				&lt;br>&lt;br>
+				Paie la facture de ton médicin Fr. 1000.-
+			</Card>
+			<Card type="GetMoney" value="4000">
+				Die Bank hat sich zu deinen Gunsten
+				geirrt. Du erhältst Fr. 4000.- zurück. &lt;br>&lt;br>
+				La banque s'est
+				trompée en ta faveur et te rembourse Fr. 4000.-
+			</Card>
+			<Card type="PayMoney" value="1000">
+				Zahle versicherungsprämie Fr. 1000.-
+				&lt;br>&lt;br>
+				Paie une police d'assurance de Fr. 1000.-
+			</Card>
+			<Card type="GetMoney" value="500">
+				Du erhältst Zinsvergütung Fr. 500.-
+				&lt;br>&lt;br>
+				On te paie les intérêts Fr. 500.-
+			</Card>
+			<Card type="GetMoneyPerPlayer" value="200">
+				Du hast Geburtstag und
+				erhältst von jedem Spieler Fr. 200.- &lt;br>&lt;br>
+				Tu as ton
+				anniversaire et chaque joueur t'offre Fr. 200.-
+			</Card>
+			<Card type="GetMoney" value="200">
+				Du hast in einer
+				Schönheitskonkurrenz den 2. Preis gewonnen und erhältst Fr. 200.-
+				&lt;br>&lt;br>
+				Tu es sorti deuxième d'un concours de beauté et tu
+				gagnes Fr. 200.-
+			</Card>
+			<Card type="GetMoney" value="1000">
+				Du erhältst für eine verkaufte Aktie
+				Fr. 1000.- &lt;br>&lt;br>
+				Tu vends une action et tu touches Fr.
+				1000.-
+			</Card>
+			<Card type="PayMoney" value="200">
+				Zahle Fr. 200.- Busse &lt;br>&lt;br>
+				Paie Fr. 200.- d'amende
+			</Card>
+			<Card type="PayMoney" value="2000">
+				Zahle für Spitalkosten Fr. 2000.-
+				&lt;br>&lt;br>
+				Tes frais d'hôpital s'élèvent à Fr. 2000.-
+			</Card>
+			<Card type="BackTo" fieldIndex="1">
+				Zurück nach
+				&amp;laquo;Chur-Kornplatz&amp;raquo; &lt;br>&lt;br>
+				Retour à
+				&amp;laquo;Coire-Kornplatz&amp;raquo;
+			</Card>
+		</Stack>
+		<Stack name="Chance" color="#FF8A8A">
+			<Card type="AdvanceTo" fieldIndex="0">
+				Vorwärts nach
+				&amp;laquo;Basel-Steinenvorstadt&amp;raquo;.
+				Du erhältst, falls der
+				Weg über &amp;laquo;Start&amp;raquo; führt, Honorar Fr. 4000.-
+				&lt;br>&lt;br>
+				En route pour
+				&amp;laquo;Bâle-Steinenvorstadt&amp;raquo;. Si ton chemin passe par
+				le &amp;laquo;Start&amp;raquo;, on te verse une prime de Fr. 400.-
+			</Card>
+			<Card type="GoRelative" value="-3">
+				3 Felder zurück.
+				&lt;br>&lt;br>
+				Recule de 3 cases.
+			</Card>
+			<Card type="GetMoney" value="1000">
+				Die Bank zahlt Dividende Fr. 1000.-
+				&lt;br>&lt;br>
+				La banque verse une dividende de Fr. 1000.-
+			</Card>
+			<Card type="PayMoney" value="300">
+				Polizeibusse für zu schnelles Fahren
+				Fr. 300.- &lt;br>&lt;br>
+				Amende pour excès de vitesse Fr. 300.-
+			</Card>
+			<Card type="PayPerHouse" houses="500" hotels="2000">
+				Zahle für
+				allgemeine Reparaturen
+				&lt;table>
+				&lt;tr>&lt;td>Fr.&lt;/td>&lt;td
+				align=&quot;right&quot;>500.- &lt;/td>&lt;td>pro
+				Haus.&lt;/td>&lt;/tr>
+				&lt;tr>&lt;td>Fr.&lt;/td>&lt;td
+				align=&quot;right&quot;>2000.- &lt;/td>&lt;td>pro
+				Hotel.&lt;/td>&lt;/tr>
+				&lt;/table>
+
+				Doit payer pour réparations
+				générales
+				&lt;table>
+				&lt;tr>&lt;td>Fr.&lt;/td>&lt;td
+				align=&quot;right&quot;>500.-
+				&lt;/td>&lt;td>par
+				maison.&lt;/td>&lt;/tr>
+				&lt;tr>&lt;td>Fr.&lt;/td>&lt;td
+				align=&quot;right&quot;>2000.-
+				&lt;/td>&lt;td>par
+				hôtel.&lt;/td>&lt;/tr>
+				&lt;/table>
+			</Card>
+			<Card type="GoToJail">
+				Auf direktem Weg ins Gefängnis. (Nicht über
+				&amp;laquo;Start&amp;raquo;. Honorar nicht zahlbar)
+				&lt;br>&lt;br>
+				Directement en prison (Sans passer par le
+				&amp;laquo;Start&amp;raquo;. Ne touche point de prime)
+			</Card>
+			<Card type="PayMoney" value="40">
+				Polizeibusse wegen Trunkenheit
+				Fr.
+				40.- &lt;br>&lt;br>
+				Amende pour avoir été en état d'ébriété Fr. 40.-
+			</Card>
+			<Card type="GetMoney" value="2000">
+				Gewinnt in der Landeslotterie Fr.
+				2000.- &lt;br>&lt;br>
+				Lot gagnant de la Loterie de la Suisse Romande
+				Fr. 2000.-
+			</Card>
+			<Card type="AdvanceTo" fieldIndex="39">
+				Vorwärts nach
+				&amp;laquo;Zürich-Paradeplatz&amp;raquo;.
+				&lt;br>&lt;br>
+				En route pour
+				&amp;laquo;Zurich-Paradeplatz&amp;raquo;.
+			</Card>
+			<Card type="PayMoney" value="3000">
+				Zahle für Schulgelder Fr. 3000.-
+				&lt;br>&lt;br>
+				Doit payer à titre d'écolage Fr. 3000.-
+			</Card>
+			<Card type="AdvanceTo" fieldIndex="15">
+				Du machst einen Ausflug auf
+				das Feld der &amp;laquo;Vereinigten Bergbahnen&amp;raquo; und
+				erhältst, falls der Weg über &amp;laquo;Start&amp;raquo; führt,
+				Honorar Fr. 4000.-
+				&lt;br>&lt;br>
+				Tu vas en excursion sur la case des
+				&amp;laquo;Funiculaires réunis SA&amp;raquo;
+				et, si la route passe
+				par le &amp;laquo;Start&amp;raquo;, on te verse Fr. 4000.- de prime.
+			</Card>
+			<Card type="GetMoney" value="3000">
+				Rückzahlung einer Anleihe. Du
+				erhältst Fr.
+				3000.- &lt;br>&lt;br>
+				Remboursement d'un emprunt. On te
+				verse
+				Fr. 3000.-
+			</Card>
+			<Card type="GetOutOfJail">
+				Sofort ohne Busse aus dem Gefängnis heraus. Die Karte
+				wird behalten und befreit von jeder späteren Haft. Sie kann auch
+				verkauft werden.&lt;br>&lt;br>
+				Sort immédiatement de prison sans
+				payer d'amende. On garde cette carte et l'on est libéré de toute
+				détention future. On peut aussi la vendre.
+			</Card>
+			<Card type="AdvanceTo" fieldIndex="24">
+				Vorwärts nach
+				&amp;laquo;Bern-Bundesplatz&amp;raquo;. Du erhältst, falls der Weg
+				über &amp;laquo;Start&amp;raquo; führt, Honorar Fr. 4000.-
+				&lt;br>&lt;br>
+				En route pour
+				&amp;laquo;Berne-Place
+				fédérale&amp;raquo;. Si ton chemin passe par le
+				&amp;laquo;Start&amp;raquo;, on te verse unde prime de Fr. 4000.-
+			</Card>
+			<Card type="AdvanceTo" fieldIndex="0">
+				Vorwärts auf
+				&amp;laquo;Start&amp;raquo;.
+				&lt;br>&lt;br>
+				Avance sur
+				&amp;laquo;Start&amp;raquo;.
+			</Card>
+			<Card type="PayPerHouse" houses="500" hotels="2000">
+				Zahle für
+				Strassenrepatatur
+				&lt;table>
+				&lt;tr>&lt;td>Fr.&lt;/td>&lt;td
+				align=&quot;right&quot;>800.- &lt;/td>&lt;td>pro
+				Haus.&lt;/td>&lt;/tr>
+				&lt;tr>&lt;td>Fr.&lt;/td>&lt;td
+				align=&quot;right&quot;>2300.- &lt;/td>&lt;td>pro
+				Hotel.&lt;/td>&lt;/tr>
+				&lt;/table>
+
+				Paie pour réparation de la chaussée
+				&lt;table>
+				&lt;tr>&lt;td>Fr.&lt;/td>&lt;td
+				align=&quot;right&quot;>800.-
+				&lt;/td>&lt;td>par
+				maison.&lt;/td>&lt;/tr>
+				&lt;tr>&lt;td>Fr.&lt;/td>&lt;td
+				align=&quot;right&quot;>2300.-
+				&lt;/td>&lt;td>par
+				hôtel.&lt;/td>&lt;/tr>
+				&lt;/table>
+			</Card>
+		</Stack>
+	</Cards>
+</MonopolyBoard>

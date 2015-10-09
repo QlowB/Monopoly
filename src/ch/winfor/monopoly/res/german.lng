@@ -1,0 +1,101 @@
+﻿// language file German (UTF-8)
+!language_name		= Deutsch
+
+// main menu
+start game			= Spiel starten
+preferences			= Einstellungen
+exit				= Beenden
+back				= Zurück
+
+// preferences
+language			= Sprache
+ok					= OK
+apply				= Übernehmen
+cancel				= Abbrechen
+
+// main menu
+welcome_text		= <html><body><h2>Willkommen zu QlowBs Monopoly</h2><br><br>Treten Sie ein in die Welt des puren Monopolyspasses!</body></html>
+
+// configure
+player name			= Spielername
+piece color			= Farbe Spielfigur
+remove player		= Spieler entfernen
+
+player				= Spieler
+add player			= Spieler hinzufügen
+remove this player	= Diesen Spieler entfernen
+
+human				= Menschlicher Spieler
+computer			= Computerspieler
+network				= Netzwerkspieler
+
+enter_ip_etc		= Geben Sie IP-Adresse und Port eines Servers an um sich damit zu verbinden.
+ip					= IP
+port				= Port
+connect				= Verbinden
+err_connection		= Fehler: Verbindung ungültig.
+could_not_connect	= Fehler: Konnte nicht mit Server verbinden.
+
+// buy house
+buy house			= Haus Kaufen
+
+// buy property
+buy property		= Grundstück kaufen
+don't buy property	= Grundstück nicht kaufen
+
+prop_announce		= Sie k&ouml;nnen ein Grundst&uuml;ck kaufen:\s
+
+// cast dice
+cast dice			= Würfeln
+
+// draw card
+prompt_draw			= Bitte ziehen Sie eine Karte vom Deck.
+draw card			= Karte Ziehen
+
+// end turn
+you have taken...	= Sie sind mit Ihren Zug zu Ende.
+buy houses & hotels	= Häuser & Hotels kaufen
+end turn			= Zug Beenden
+
+// pay rent
+pay rent			= Miete Zahlen
+
+// pay tax
+pay tax				= Steuer Zahlen
+
+// follow card
+you_must_follow		= Nun m&uuml;ssen Sie die Instruktionen auf der Karte befolgen.
+play card			= Karte Spielen
+
+// game
+game				= Spiel
+create game			= Spiel erstellen
+join game			= Spiel beitreten
+online				= Online
+choose board		= Spielbrett wählen
+
+// game control
+whose_turn_before	=
+whose_turn_after	= \sist am Zug.
+
+// browse
+players				= Spieler
+properties			= Grundstücke
+
+with				= Mit
+houses				= Häuser
+price				= Preis
+rent				= Miete
+x dice roll			= x gewürfelte Augenzahl
+if_rr_owned			= Wenn in Besitz von
+railroads owned		= Bahnen
+
+money				= Geld
+
+// error
+error				= Fehler
+please_more_than_zero_players	= Bitte wählen Sie einen Spieler.
+
+// menu
+view				= Ansicht
+zoom				= Vergrösserung

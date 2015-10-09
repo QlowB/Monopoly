@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<MonopolyBoard>
+	<Info>
+		<Flank size="10" />
+		<StartupMoney amount="1500" />
+		<Currency prefix="" suffix="$" />
+		<Hotel houseValue="5" />
+	</Info>
+	<Monopolies>
+		<Monopoly name="Brown" color="#A00000" />
+		<Monopoly name="LightBlue" color="#B4B4FF" />
+		<Monopoly name="Pink" color="#F040A0" />
+		<Monopoly name="Orange" color="#FFC800" />
+		<Monopoly name="Red" color="#FF0000" />
+		<Monopoly name="Yellow" color="#FFFF00" />
+		<Monopoly name="Green" color="#00FF00" />
+		<Monopoly name="Blue" color="#0000FF" />
+	</Monopolies>
+
+	<Fields>
+		<Field type="Start" caption="Go">
+			 <!-- money received when passing start -->
+			<PassMoney amount="200" />
+			 <!-- money received when landing on start -->
+			<VisitMoney amount="200" />
+		</Field>
+
+		<Field type="Property" caption="Mediterranean Avenue">
+			<Price value="60" />
+			<Monopoly name="Brown" />
+			<HousePrice value="50" />
+			<Mortgage value="30" />
+			<RentTable>
+				<Rent houses="0" value="2" />
+				<Rent houses="1" value="10" />
+				<Rent houses="2" value="30" />
+				<Rent houses="3" value="90" />
+				<Rent houses="4" value="160" />
+				<Rent houses="5" value="250" />
+			</RentTable>
+		</Field>
+
+		<Field type="DrawCard" caption="Community Chest">
+		</Field>
+
+		<Field type="Property" caption="Baltic Avenue">
+			<Price value="60" />
+			<Monopoly name="Brown" />
+			<HousePrice value="50" />
+			<Mortgage value="30" />
+			<RentTable>
+				<Rent houses="0" value="4" />
+				<Rent houses="1" value="20" />
+				<Rent houses="2" value="60" />
+				<Rent houses="3" value="180" />
+				<Rent houses="4" value="320" />
+				<Rent houses="5" value="450" />
+			</RentTable>
+		</Field>
+
+		<Field type="Tax" caption="Income Tax">
+			<Tax value="200" />
+		</Field>
+
+		<Field type="Railroad" caption="Reading Railroad">
+			<Price value="200" />
+			<Mortgage value="100" />
+			<RentTable>
+				<Rent railroads="1" value="25" />
+				<Rent railroads="2" value="50" />
+				<Rent railroads="3" value="100" />
+				<Rent railroads="4" value="200" />
+			</RentTable>
+		</Field>
+
+		<Field type="Property" caption="Oriental Avenue">
+			<Price value="100" />
+			<Monopoly name="LightBlue" />
+			<HousePrice value="50" />
+			<Mortgage value="50" />
+			<RentTable>
+				<Rent houses="0" value="6" />
+				<Rent houses="1" value="30" />
+				<Rent houses="2" value="90" />
+				<Rent houses="3" value="270" />
+				<Rent houses="4" value="400" />
+				<Rent houses="5" value="550" />
+			</RentTable>
+		</Field>
+
+		<Field type="DrawCard" caption="Chance">
+		</Field>
+
+		<Field type="Property" caption="Vermont Avenue">
+			<Price value="100" />
+			<Monopoly name="LightBlue" />
+			<HousePrice value="50" />
+			<Mortgage value="50" />
+			<RentTable>
+				<Rent houses="0" value="6" />
+				<Rent houses="1" value="30" />
+				<Rent houses="2" value="90" />
+				<Rent houses="3" value="270" />
+				<Rent houses="4" value="400" />
+				<Rent houses="5" value="550" />
+			</RentTable>
+		</Field>
+
+		<Field type="Property" caption="Connecticut Avenue">
+			<Price value="120" />
+			<Monopoly name="LightBlue" />
+			<HousePrice value="50" />
+			<Mortgage value="60" />
+			<RentTable>
+				<Rent houses="0" value="8" />
+				<Rent houses="1" value="40" />
+				<Rent houses="2" value="100" />
+				<Rent houses="3" value="300" />
+				<Rent houses="4" value="450" />
+				<Rent houses="5" value="600" />
+			</RentTable>
+		</Field>
+
+		<Field type="Jail" caption="Jail">
+		</Field>
+
+		<Field type="Property" caption="St. Charles Place">
+			<Price value="140" />
+			<Monopoly name="Pink" />
+			<HousePrice value="100" />
+			<Mortgage value="70" />
+			<RentTable>
+				<Rent houses="0" value="10" />
+				<Rent houses="1" value="50" />
+				<Rent houses="2" value="150" />
+				<Rent houses="3" value="450" />
+				<Rent houses="4" value="625" />
+				<Rent houses="5" value="750" />
+			</RentTable>
+		</Field>
+
+		<Field type="Company" caption="Electric Company">
+			<Price value="150" />
+			<Mortgage value="75" />
+			<RentTable>
+				<Rent companies="1" multiplicator="4" />
+				<Rent companies="2" multiplicator="10" />
+			</RentTable>
+		</Field>
+
+		<Field type="Property" caption="States Avenue">
+			<Price value="140" />
+			<Monopoly name="Pink" />
+			<HousePrice value="100" />
+			<Mortgage value="70" />
+			<RentTable>
+				<Rent houses="0" value="10" />
+				<Rent houses="1" value="50" />
+				<Rent houses="2" value="150" />
+				<Rent houses="3" value="450" />
+				<Rent houses="4" value="625" />
+				<Rent houses="5" value="750" />
+			</RentTable>
+		</Field>
+
+		<Field type="Property" caption="Virginia Avenue">
+			<Price value="160" />
+			<Monopoly name="Pink" />
+			<HousePrice value="100" />
+			<Mortgage value="80" />
+			<RentTable>
+				<Rent houses="0" value="12" />
+				<Rent houses="1" value="60" />
+				<Rent houses="2" value="180" />
+				<Rent houses="3" value="500" />
+				<Rent houses="4" value="700" />
+				<Rent houses="5" value="900" />
+			</RentTable>
+		</Field>
+
+		<Field type="Railroad" caption="Pennslvania Railroad">
+			<Price value="200" />
+			<Mortgage value="100" />
+			<RentTable>
+				<Rent railroads="1" value="25" />
+				<Rent railroads="2" value="50" />
+				<Rent railroads="3" value="100" />
+				<Rent railroads="4" value="200" />
+			</RentTable>
+		</Field>
+
+		<Field type="Property" caption="St. James Place">
+			<Price value="180" />
+			<Monopoly name="Orange" />
+			<HousePrice value="100" />
+			<Mortgage value="90" />
+			<RentTable>
+				<Rent houses="0" value="14" />
+				<Rent houses="1" value="70" />
+				<Rent houses="2" value="200" />
+				<Rent houses="3" value="550" />
+				<Rent houses="4" value="750" />
+				<Rent houses="5" value="950" />
+			</RentTable>
+		</Field>
+
+		<Field type="DrawCard" caption="Community Chest">
+		</Field>
+
+		<Field type="Property" caption="Tennessee Avenue">
+			<Price value="180" />
+			<Monopoly name="Orange" />
+			<HousePrice value="100" />
+			<Mortgage value="90" />
+			<RentTable>
+				<Rent houses="0" value="14" />
+				<Rent houses="1" value="70" />
+				<Rent houses="2" value="200" />
+				<Rent houses="3" value="550" />
+				<Rent houses="4" value="750" />
+				<Rent houses="5" value="950" />
+			</RentTable>
+		</Field>
+
+		<Field type="Property" caption="New York Avenue">
+			<Price value="200" />
+			<Monopoly name="Orange" />
+			<HousePrice value="100" />
+			<Mortgage value="100" />
+			<RentTable>
+				<Rent houses="0" value="16" />
+				<Rent houses="1" value="80" />
+				<Rent houses="2" value="220" />
+				<Rent houses="3" value="600" />
+				<Rent houses="4" value="800" />
+				<Rent houses="5" value="1000" />
+			</RentTable>
+		</Field>
+
+		<Field type="FreeParking" caption="Free Parking">
+		</Field>
+
+		<Field type="Property" caption="Kentucky Avenue">
+			<Price value="220" />
+			<Monopoly name="Red" />
+			<HousePrice value="150" />
+			<Mortgage value="110" />
+			<RentTable>
+				<Rent houses="0" value="18" />
+				<Rent houses="1" value="90" />
+				<Rent houses="2" value="250" />
+				<Rent houses="3" value="700" />
+				<Rent houses="4" value="875" />
+				<Rent houses="5" value="1050" />
+			</RentTable>
+		</Field>
+
+		<Field type="DrawCard" caption="Chance">
+		</Field>
+
+		<Field type="Property" caption="Indiana Avenue">
+			<Price value="220" />
+			<Monopoly name="Red" />
+			<HousePrice value="150" />
+			<Mortgage value="110" />
+			<RentTable>
+				<Rent houses="0" value="18" />
+				<Rent houses="1" value="90" />
+				<Rent houses="2" value="250" />
+				<Rent houses="3" value="700" />
+				<Rent houses="4" value="875" />
+				<Rent houses="5" value="1050" />
+			</RentTable>
+		</Field>
+
+		<Field type="Property" caption="Illinois Avenue">
+			<Price value="240" />
+			<Monopoly name="Red" />
+			<HousePrice value="150" />
+			<Mortgage value="120" />
+			<RentTable>
+				<Rent houses="0" value="20" />
+				<Rent houses="1" value="100" />
+				<Rent houses="2" value="300" />
+				<Rent houses="3" value="750" />
+				<Rent houses="4" value="925" />
+				<Rent houses="5" value="1100" />
+			</RentTable>
+		</Field>
+
+		<Field type="Railroad" caption="B. &amp; O. Railroad">
+			<Price value="200" />
+			<Mortgage value="100" />
+			<RentTable>
+				<Rent railroads="1" value="25" />
+				<Rent railroads="2" value="50" />
+				<Rent railroads="3" value="100" />
+				<Rent railroads="4" value="200" />
+			</RentTable>
+		</Field>
+
+		<Field type="Property" caption="Atlantic Avenue">
+			<Price value="260" />
+			<Monopoly name="Yellow" />
+			<HousePrice value="150" />
+			<Mortgage value="130" />
+			<RentTable>
+				<Rent houses="0" value="22" />
+				<Rent houses="1" value="110" />
+				<Rent houses="2" value="330" />
+				<Rent houses="3" value="800" />
+				<Rent houses="4" value="975" />
+				<Rent houses="5" value="1150" />
+			</RentTable>
+		</Field>
+
+		<Field type="Property" caption="Ventnor Avenue">
+			<Price value="260" />
+			<Monopoly name="Yellow" />
+			<HousePrice value="150" />
+			<Mortgage value="130" />
+			<RentTable>
+				<Rent houses="0" value="22" />
+				<Rent houses="1" value="110" />
+				<Rent houses="2" value="330" />
+				<Rent houses="3" value="800" />
+				<Rent houses="4" value="975" />
+				<Rent houses="5" value="1150" />
+			</RentTable>
+		</Field>
+
+		<Field type="Company" caption="Water Works">
+			<Price value="150" />
+			<Mortgage value="75" />
+			<RentTable>
+				<Rent companies="1" multiplicator="4" />
+				<Rent companies="2" multiplicator="10" />
+			</RentTable>
+		</Field>
+
+		<Field type="Property" caption="Marvin Gardens">
+			<Price value="280" />
+			<Monopoly name="Yellow" />
+			<HousePrice value="150" />
+			<Mortgage value="140" />
+			<RentTable>
+				<Rent houses="0" value="24" />
+				<Rent houses="1" value="120" />
+				<Rent houses="2" value="360" />
+				<Rent houses="3" value="850" />
+				<Rent houses="4" value="1025" />
+				<Rent houses="5" value="1200" />
+			</RentTable>
+		</Field>
+
+		<Field type="GoToJail" caption="Go To Jail">
+		</Field>
+
+		<Field type="Property" caption="Pacific Avenue">
+			<Price value="300" />
+			<Monopoly name="Green" />
+			<HousePrice value="200" />
+			<Mortgage value="150" />
+			<RentTable>
+				<Rent houses="0" value="26" />
+				<Rent houses="1" value="130" />
+				<Rent houses="2" value="390" />
+				<Rent houses="3" value="900" />
+				<Rent houses="4" value="1100" />
+				<Rent houses="5" value="1275" />
+			</RentTable>
+		</Field>
+
+		<Field type="Property" caption="North Carolina Avenue">
+			<Price value="300" />
+			<Monopoly name="Green" />
+			<HousePrice value="200" />
+			<Mortgage value="150" />
+			<RentTable>
+				<Rent houses="0" value="26" />
+				<Rent houses="1" value="130" />
+				<Rent houses="2" value="390" />
+				<Rent houses="3" value="900" />
+				<Rent houses="4" value="1100" />
+				<Rent houses="5" value="1275" />
+			</RentTable>
+		</Field>
+
+		<Field type="DrawCard" caption="Community Chest">
+		</Field>
+
+		<Field type="Property" caption="Pennsylvania Avenue">
+			<Price value="320" />
+			<Monopoly name="Green" />
+			<HousePrice value="200" />
+			<Mortgage value="160" />
+			<RentTable>
+				<Rent houses="0" value="28" />
+				<Rent houses="1" value="150" />
+				<Rent houses="2" value="450" />
+				<Rent houses="3" value="1000" />
+				<Rent houses="4" value="1200" />
+				<Rent houses="5" value="1400" />
+			</RentTable>
+		</Field>
+
+		<Field type="Railroad" caption="Short Line">
+			<Price value="200" />
+			<Mortgage value="100" />
+			<RentTable>
+				<Rent railroads="1" value="25" />
+				<Rent railroads="2" value="50" />
+				<Rent railroads="3" value="100" />
+				<Rent railroads="4" value="200" />
+			</RentTable>
+		</Field>
+
+		<Field type="DrawCard" caption="Chance">
+		</Field>
+
+		<Field type="Property" caption="Park Place">
+			<Price value="350" />
+			<Monopoly name="Blue" />
+			<HousePrice value="200" />
+			<Mortgage value="175" />
+			<RentTable>
+				<Rent houses="0" value="35" />
+				<Rent houses="1" value="175" />
+				<Rent houses="2" value="500" />
+				<Rent houses="3" value="1100" />
+				<Rent houses="4" value="1300" />
+				<Rent houses="5" value="1500" />
+			</RentTable>
+		</Field>
+
+		<Field type="Tax" caption="Luxury Tax">
+			<Tax value="100" />
+		</Field>
+
+		<Field type="Property" caption="Boardwalk">
+			<Price value="400" />
+			<Monopoly name="Blue" />
+			<HousePrice value="200" />
+			<Mortgage value="200" />
+			<RentTable>
+				<Rent houses="0" value="50" />
+				<Rent houses="1" value="200" />
+				<Rent houses="2" value="600" />
+				<Rent houses="3" value="1400" />
+				<Rent houses="4" value="1700" />
+				<Rent houses="5" value="2000" />
+			</RentTable>
+		</Field>
+	</Fields>
+
+	<Cards>
+		<Stack name="Community Chest" color="#FFFFC0">
+			<Card type="AdvanceTo" fieldIndex="0">
+				Advance to Go (Collect $200)
+			</Card>
+			<Card type="GetMoney" value="75">
+				Bank error in your favor – collect
+				$75
+			</Card>
+			<Card type="PayMoney" value="50">
+				Doctor's fees – Pay $50
+			</Card>
+			<Card type="GetOutOfJail">
+				Get out of jail free – this card may be kept until
+				needed, or sold
+			</Card>
+			<Card type="GoToJail" value="75">
+				Go to jail – go directly to jail –
+				Do not pass Go, do not collect $200
+			</Card>
+			<Card type="GetMoneyPerPlayer" value="10">
+				It is your birthday Collect
+				$10 from each player
+			</Card>
+			<Card type="GetMoneyPerPlayer" value="50">
+				Grand Opera Night – collect
+				$50 from
+				every player for opening night seats
+			</Card>
+			<Card type="GetMoney" value="20">
+				Income Tax refund – collect $20
+			</Card>
+			<Card type="GetMoney" value="100">
+				Life Insurance Matures – collect
+				$100
+			</Card>
+			<Card type="PayMoney" value="100">
+				Pay Hospital Fees of $100
+			</Card>
+			<Card type="PayMoney" value="50">
+				Pay School Fees of $50
+			</Card>
+			<Card type="PayMoney" value="25">
+				Receive $25 Consultancy Fee
+			</Card>
+			<Card type="PayPerHouse" houses="40" hotels="115">
+				You are assessed for
+				street repairs – $40 per house, $115 per hotel
+			</Card>
+			<Card type="GetMoney" value="10">
+				You have won second prize in a
+				beauty contest– collect $10
+			</Card>
+			<Card type="GetMoney" value="100">
+				You inherit $100
+			</Card>
+			<Card type="GetMoney" value="50">
+				From sale of stock you get $50
+			</Card>
+			<Card type="GetMoney" value="100">
+				Holiday Fund matures - Receive $100
+			</Card>
+		</Stack>
+		<Stack name="Chance" color="#FF8A8A">
+			<Card type="AdvanceTo" fieldIndex="0">
+				Advance to Go (Collect $200)
+			</Card>
+			<Card type="AdvanceTo" fieldIndex="24">
+				Advance to Illinois Ave.
+			</Card>
+			<Card type="AdvanceToUtility" multiplicator="10">
+				Advance token to
+				nearest
+				Utility. If unowned, you may buy it from the Bank. If owned,
+				throw
+				dice and pay owner a total ten times the amount thrown.
+			</Card>
+			<Card type="AdvanceToRailroad" multiplicator="2">
+				Advance token to
+				the nearest Railroad and pay owner twice the rental to
+				which he/she
+				is otherwise entitled. If Railroad is unowned, you may buy it from
+				the Bank.
+			</Card>
+			<Card type="AdvanceToRailroad" multiplicator="2">
+				Advance token to
+				the nearest Railroad and pay owner twice the rental to
+				which he/she
+				is otherwise entitled. If Railroad is unowned, you may buy it from
+				the Bank.
+			</Card>
+			<Card type="AdvanceTo" fieldIndex="11">
+				Advance to St. Charles Place –
+				if you pass Go, collect $200
+			</Card>
+			<Card type="GetMoney" value="50">
+				Bank pays you dividend of $50
+			</Card>
+			<Card type="GetOutOfJail">
+				Get out of Jail free – this card may be kept until
+				needed, or
+				traded/sold
+			</Card>
+			<Card type="GoRelative" value="-3">
+				Go back 3 spaces
+			</Card>
+			<Card type="GoToJail">
+				Go directly to Jail – do not pass Go, do not collect
+				$200
+			</Card>
+			<Card type="PayPerHouse" houses="25" hotels="100">
+				Make general repairs
+				on all your property – for each house pay $25 – for each hotel $100
+			</Card>
+			<Card type="PayMoney" value="15">
+				Pay poor tax of $15
+			</Card>
+			<Card type="AdvanceTo" fieldIndex="5">
+				Take a trip to Reading
+				Railroad – if you pass Go collect $200
+			</Card>
+			<Card type="AdvanceTo" fieldIndex="39">
+				Take a walk on the Boardwalk –
+				advance token to Boardwalk
+			</Card>
+			<Card type="PayMoneyPerPlayer" value="50">
+				You have been elected
+				chairman of the board – pay each player $50
+			</Card>
+			<Card type="GetMoney" value="150">
+				Your building loan matures – collect
+				$150
+			</Card>
+			<Card type="GetMoney" value="100">
+				You have won a crossword competition
+				- collect $100
+			</Card>
+		</Stack>
+	</Cards>
+</MonopolyBoard>
