@@ -9,9 +9,9 @@ import java.io.Serializable;
  * 
  */
 public abstract class NetworkMessage implements Serializable {
-	/** */
-	private static final long serialVersionUID = -7984114155557108935L;
+    /** */
+    private static final long serialVersionUID = -7984114155557108935L;
 
-	public NetworkMessage() {
-	}
+    public NetworkMessage() {
+    }
 }

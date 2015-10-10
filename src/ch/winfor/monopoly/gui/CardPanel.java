@@ -15,26 +15,26 @@ import ch.winfor.monopoly.game.Card;
  * 
  */
 public class CardPanel extends JPanel {
-	/** */
-	private static final long serialVersionUID = 1477690741781584792L;
+    /** */
+    private static final long serialVersionUID = 1477690741781584792L;
 
-	/** the text panel displaying the cards content */
-	private JLabel lblText;
+    /** the text panel displaying the cards content */
+    private JLabel lblText;
 
-	/**
-	 * Create the panel.
-	 */
-	public CardPanel(Card c) {
-		assert c != null : "card == null";
+    /**
+     * Create the panel.
+     */
+    public CardPanel(Card c) {
+        assert c != null : "card == null";
 
-		setLayout(new BorderLayout(0, 0));
+        setLayout(new BorderLayout(0, 0));
 
-		lblText = new JLabel("<card text>");
-		lblText.setHorizontalAlignment(SwingConstants.CENTER);
-		add(lblText, BorderLayout.CENTER);
-		if (c.getParentStack() != null)
-			this.setBackground(c.getParentStack().getColor());
-		lblText.setText("<html><body><div align=\"center\">" + c.getText()
-				+ "</div></body></html>");
-	}
+        lblText = new JLabel("<card text>");
+        lblText.setHorizontalAlignment(SwingConstants.CENTER);
+        add(lblText, BorderLayout.CENTER);
+        if (c.getParentStack() != null)
+            this.setBackground(c.getParentStack().getColor());
+        lblText.setText("<html><body><div align=\"center\">" + c.getText()
+                + "</div></body></html>");
+    }
 }

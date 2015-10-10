@@ -18,48 +18,48 @@ import ch.winfor.monopoly.game.TurnHandler.TurnTask;
  * 
  */
 public class CastDicePanel extends TurnActionPanel implements ActionListener,
-		LanguageListener {
+        LanguageListener {
 
-	/**
+    /**
 	 * 
 	 */
-	private static final long serialVersionUID = -6369666756818300879L;
+    private static final long serialVersionUID = -6369666756818300879L;
 
-	private JButton btnCastDice;
+    private JButton btnCastDice;
 
-	/**
-	 * Create the panel.
-	 */
-	public CastDicePanel(Game game) {
-		super(game);
-		btnCastDice = new JButton("Cast Dice");
-		this.add(btnCastDice);
-		btnCastDice.addActionListener(this);
+    /**
+     * Create the panel.
+     */
+    public CastDicePanel(Game game) {
+        super(game);
+        btnCastDice = new JButton("Cast Dice");
+        this.add(btnCastDice);
+        btnCastDice.addActionListener(this);
 
-		Language lang = Language.getInstance();
-		lang.addLanguageListener(this);
-		languageChanged(lang);
-	}
+        Language lang = Language.getInstance();
+        lang.addLanguageListener(this);
+        languageChanged(lang);
+    }
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		Object source = e.getSource();
-		TurnHandler turnHandler = game.getTurnHandler();
-		if (source == btnCastDice) {
-			if (turnHandler.getNextTask() == TurnTask.CAST_DICE) {
-				turnHandler.castDice();
-				turnHandler.movePiece();
-				ActionEvent ae = new ActionEvent(this, 0, "");
-				fireActionEvent(ae);
-			} else {
-				ActionEvent ae = new ActionEvent(this, -1, "");
-				fireActionEvent(ae);
-			}
-		}
-	}
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Object source = e.getSource();
+        TurnHandler turnHandler = game.getTurnHandler();
+        if (source == btnCastDice) {
+            if (turnHandler.getNextTask() == TurnTask.CAST_DICE) {
+                turnHandler.castDice();
+                turnHandler.movePiece();
+                ActionEvent ae = new ActionEvent(this, 0, "");
+                fireActionEvent(ae);
+            } else {
+                ActionEvent ae = new ActionEvent(this, -1, "");
+                fireActionEvent(ae);
+            }
+        }
+    }
 
-	@Override
-	public void languageChanged(Language sender) {
-		btnCastDice.setText(sender.get("cast dice"));
-	}
+    @Override
+    public void languageChanged(Language sender) {
+        btnCastDice.setText(sender.get("cast dice"));
+    }
 }

@@ -11,107 +11,107 @@ import ch.winfor.monopoly.game.TurnHandler;
  * 
  */
 public class MonopolyAi implements Freeable {
-	/**
-	 * the players turn index
-	 */
-	private int turn;
+    /**
+     * the players turn index
+     */
+    private int turn;
 
-	/**
-	 * the game
-	 */
-	private Game game;
+    /**
+     * the game
+     */
+    private Game game;
 
-	/** thread waiting for the turn */
-	private TurnAwaiter turnAwaiter;
+    /** thread waiting for the turn */
+    private TurnAwaiter turnAwaiter;
 
-	public MonopolyAi(Game game, int turn) {
-		this.game = game;
-		this.turn = turn;
-		turnAwaiter = new TurnAwaiter();
-		turnAwaiter.start();
-	}
+    public MonopolyAi(Game game, int turn) {
+        this.game = game;
+        this.turn = turn;
+        turnAwaiter = new TurnAwaiter();
+        turnAwaiter.start();
+    }
 
-	@SuppressWarnings("unused")
-	public void takeTurn() {
-		try {
-			// make it look like the computer thinks
-			// Thread.sleep(500);
-			if (false)
-				throw new InterruptedException();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+    @SuppressWarnings("unused")
+    public void takeTurn() {
+        try {
+            // make it look like the computer thinks
+            // Thread.sleep(500);
+            if (false)
+                throw new InterruptedException();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
-		TurnHandler th = game.getTurnHandler();
-		switch (th.getNextTask()) {
-		case CAST_DICE:
-			th.castDice();
-			break;
-		case MOVE_PLAYING_PIECE:
-			th.movePiece();
-			break;
-		case BUY_PROPERTY:
-			th.buyProperty(false);
-			break;
-		case PAY_RENT:
-			th.payRent();
-			break;
-		case PAY_TAX:
-			th.payTax();
-			break;
-		case END_TURN:
-			th.endTurn();
-			break;
-		case DRAW_CARD:
-			th.drawCard();
-			break;
-		case FOLLOW_CARD:
-			th.followCard();
-			break;
-		default:
-			th.endTurn();
-			break;
-		}
-	}
-	
-	@Override
-	public void free() {
-		endGame();
-	}
+        TurnHandler th = game.getTurnHandler();
+        switch (th.getNextTask()) {
+        case CAST_DICE:
+            th.castDice();
+            break;
+        case MOVE_PLAYING_PIECE:
+            th.movePiece();
+            break;
+        case BUY_PROPERTY:
+            th.buyProperty(false);
+            break;
+        case PAY_RENT:
+            th.payRent();
+            break;
+        case PAY_TAX:
+            th.payTax();
+            break;
+        case END_TURN:
+            th.endTurn();
+            break;
+        case DRAW_CARD:
+            th.drawCard();
+            break;
+        case FOLLOW_CARD:
+            th.followCard();
+            break;
+        default:
+            th.endTurn();
+            break;
+        }
+    }
 
-	public void endGame() {
-		turnAwaiter.shouldStop();
-		turnAwaiter = null;
-	}
+    @Override
+    public void free() {
+        endGame();
+    }
 
-	/**
-	 * waits until its his turn
-	 * 
-	 * @author Nicolas Winkler
-	 * 
-	 */
-	private class TurnAwaiter extends Thread {
-		private boolean shouldRun;
+    public void endGame() {
+        turnAwaiter.shouldStop();
+        turnAwaiter = null;
+    }
 
-		public TurnAwaiter() {
-			shouldRun = true;
-		}
+    /**
+     * waits until its his turn
+     * 
+     * @author Nicolas Winkler
+     * 
+     */
+    private class TurnAwaiter extends Thread {
+        private boolean shouldRun;
 
-		public void shouldStop() {
-			shouldRun = false;
-		}
+        public TurnAwaiter() {
+            shouldRun = true;
+        }
 
-		public void run() {
-			while (shouldRun) {
-				try {
-					Thread.sleep(1);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				if (game.getTurn() == turn) {
-					takeTurn();
-				}
-			}
-		}
-	}
+        public void shouldStop() {
+            shouldRun = false;
+        }
+
+        public void run() {
+            while (shouldRun) {
+                try {
+                    Thread.sleep(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                if (game.getTurn() == turn) {
+                    takeTurn();
+                }
+            }
+        }
+    }
 }

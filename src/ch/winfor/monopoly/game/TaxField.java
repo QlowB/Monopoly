@@ -8,29 +8,29 @@ package ch.winfor.monopoly.game;
  */
 public class TaxField extends Field {
 
-	/** */
-	private static final long serialVersionUID = -1072428948952950971L;
+    /** */
+    private static final long serialVersionUID = -1072428948952950971L;
 
-	/** amount of taxes to pay */
-	protected long taxAmount;
+    /** amount of taxes to pay */
+    protected long taxAmount;
 
-	public TaxField(String name, long tax) {
-		super(name);
-		this.taxAmount = tax;
-	}
+    public TaxField(String name, long tax) {
+        super(name);
+        this.taxAmount = tax;
+    }
 
-	/**
-	 * @return the tax amount
-	 */
-	public long getTaxAmount() {
-		return taxAmount;
-	}
+    /**
+     * @return the tax amount
+     */
+    public long getTaxAmount() {
+        return taxAmount;
+    }
 
-	/**
-	 * @param taxAmount
-	 *            the new tax amount to set
-	 */
-	public void setTaxAmount(long taxAmount) {
-		this.taxAmount = taxAmount;
-	}
+    /**
+     * @param taxAmount
+     *            the new tax amount to set
+     */
+    public void setTaxAmount(long taxAmount) {
+        this.taxAmount = taxAmount;
+    }
 }
