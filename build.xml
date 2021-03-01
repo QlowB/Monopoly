@@ -1,0 +1,22 @@
+<!-- Ant build file -->
+<project default="compile">
+    <target name="compile">
+        <mkdir dir="bin"/>
+        <javac srcdir="src" destdir="bin"/>
+        <copy todir="bin">
+            <fileset dir="src">
+                <include name="**/*.txt"/>
+                <include name="**/*.xml"/>
+                <include name="**/*.png"/>
+                <include name="**/*.lng"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="build-jar" depends="compile">
+        <manifest file="MANIFEST.MF">
+            <attribute name="Main-Class" value="ch.winfor.monopoly.Monopoly"/>
+            <attribute name="Class-Path" value="."/>
+        </manifest>
+        <jar destfile="Monopoly.jar" basedir="bin" manifest="MANIFEST.MF"/>
+    </target>
+</project>
