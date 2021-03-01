@@ -19,73 +19,73 @@ import ch.winfor.monopoly.game.Game;
 import ch.winfor.monopoly.gui.CardPanel;
 
 public class PlayCardPanel extends TurnActionPanel implements ActionListener {
-	/**
+    /**
 	 * 
 	 */
-	private static final long serialVersionUID = -571553863754017889L;
+    private static final long serialVersionUID = -571553863754017889L;
 
-	/** panel to display the drawn card */
-	private JPanel cardPanel;
+    /** panel to display the drawn card */
+    private JPanel cardPanel;
 
-	/**
-	 * Create the panel.
-	 */
-	public PlayCardPanel(Game game) {
-		super(game);
-		setLayout(new BorderLayout(0, 0));
+    /**
+     * Create the panel.
+     */
+    public PlayCardPanel(Game game) {
+        super(game);
+        setLayout(new BorderLayout(0, 0));
 
-		cardPanel = new JPanel();
-		add(cardPanel, BorderLayout.SOUTH);
-		cardPanel.setLayout(new BorderLayout(0, 0));
-		cardPanel.setPreferredSize(new Dimension(0, 100));
+        cardPanel = new JPanel();
+        add(cardPanel, BorderLayout.SOUTH);
+        cardPanel.setLayout(new BorderLayout(0, 0));
+        cardPanel.setPreferredSize(new Dimension(0, 100));
 
-		JPanel upperPanel = new JPanel();
-		add(upperPanel, BorderLayout.CENTER);
-		upperPanel.setLayout(new BoxLayout(upperPanel, BoxLayout.Y_AXIS));
+        JPanel upperPanel = new JPanel();
+        add(upperPanel, BorderLayout.CENTER);
+        upperPanel.setLayout(new BoxLayout(upperPanel, BoxLayout.Y_AXIS));
 
-		final JLabel lblYouHaveTo = new JLabel(
-				"<html><div align=\"center\">Now you must follow the card's instructions.</div></html>");
-		lblYouHaveTo.setHorizontalAlignment(SwingConstants.CENTER);
-		upperPanel.add(lblYouHaveTo);
-		lblYouHaveTo.setAlignmentY(Component.CENTER_ALIGNMENT);
-		lblYouHaveTo.setAlignmentX(Component.CENTER_ALIGNMENT);
+        final JLabel lblYouHaveTo = new JLabel(
+                "<html><div align=\"center\">Now you must follow the card's instructions.</div></html>");
+        lblYouHaveTo.setHorizontalAlignment(SwingConstants.CENTER);
+        upperPanel.add(lblYouHaveTo);
+        lblYouHaveTo.setAlignmentY(Component.CENTER_ALIGNMENT);
+        lblYouHaveTo.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-		final JButton btnDrawCard = new JButton("Play Card");
-		upperPanel.add(btnDrawCard);
-		btnDrawCard.setAlignmentY(Component.TOP_ALIGNMENT);
-		btnDrawCard.setAlignmentX(Component.CENTER_ALIGNMENT);
-		btnDrawCard.addActionListener(this);
+        final JButton btnDrawCard = new JButton("Play Card");
+        upperPanel.add(btnDrawCard);
+        btnDrawCard.setAlignmentY(Component.TOP_ALIGNMENT);
+        btnDrawCard.setAlignmentX(Component.CENTER_ALIGNMENT);
+        btnDrawCard.addActionListener(this);
 
-		LanguageListener ll = new LanguageListener() {
+        LanguageListener ll = new LanguageListener() {
 
-			@Override
-			public void languageChanged(Language sender) {
-				lblYouHaveTo.setText("<html><div align=\"center\">"
-						+ sender.get("you_must_follow") + "</div></html>");
-				btnDrawCard.setText(sender.get("play card"));
-			}
-		};
-		Language lang = Language.getInstance();
-		lang.addLanguageListener(ll);
-		ll.languageChanged(lang);
-	}
+            @Override
+            public void languageChanged(Language sender) {
+                lblYouHaveTo.setText("<html><div align=\"center\">"
+                        + sender.get("you_must_follow") + "</div></html>");
+                btnDrawCard.setText(sender.get("play card"));
+            }
+        };
+        Language lang = Language.getInstance();
+        lang.addLanguageListener(ll);
+        ll.languageChanged(lang);
+    }
 
-	/**
-	 * sets the card to display
-	 * 
-	 * @param card
-	 *            the card to display
-	 */
-	public void setCard(Card card) {
-		CardPanel panel = new CardPanel(card);
-		cardPanel.removeAll();
-		cardPanel.add(panel);
-	}
+    /**
+     * sets the card to display
+     * 
+     * @param card
+     *            the card to display
+     */
+    public void setCard(Card card) {
+        CardPanel panel = new CardPanel(card);
+        cardPanel.removeAll();
+        cardPanel.add(panel);
+    }
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		ActionEvent ae = new ActionEvent(this, 0, "");
-		game.getTurnHandler().followCard();
-		fireActionEvent(ae);
-	}
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        ActionEvent ae = new ActionEvent(this, 0, "");
+        game.getTurnHandler().followCard();
+        fireActionEvent(ae);
+    }
 }

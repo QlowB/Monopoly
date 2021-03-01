@@ -19,230 +19,230 @@ import ch.winfor.monopoly.Language.LanguageListener;
  *
  */
 public class PlayerListPanel extends JScrollPane implements ActionListener,
-		LanguageListener, Freeable {
-	/** */
-	private static final long serialVersionUID = 4715296390024504794L;
+        LanguageListener, Freeable {
+    /** */
+    private static final long serialVersionUID = 4715296390024504794L;
 
-	/** filling content panel */
-	private JPanel content;
+    /** filling content panel */
+    private JPanel content;
 
-	/** add player button */
-	private JButton btnAddPlayer;
+    /** add player button */
+    private JButton btnAddPlayer;
 
-	private ArrayList<PlayerChangeListener> listeners;
+    private ArrayList<PlayerChangeListener> listeners;
 
-	public PlayerListPanel() {
-		content = new JPanel();
-		super.getViewport().add(content);
-		content.setLayout(new BoxLayout(content, BoxLayout.Y_AXIS));
-		btnAddPlayer = new JButton("add player");
-		btnAddPlayer.setAlignmentX(Component.CENTER_ALIGNMENT);
-		btnAddPlayer.addActionListener(this);
-		content.add(btnAddPlayer);
+    public PlayerListPanel() {
+        content = new JPanel();
+        super.getViewport().add(content);
+        content.setLayout(new BoxLayout(content, BoxLayout.Y_AXIS));
+        btnAddPlayer = new JButton("add player");
+        btnAddPlayer.setAlignmentX(Component.CENTER_ALIGNMENT);
+        btnAddPlayer.addActionListener(this);
+        content.add(btnAddPlayer);
 
-		listeners = new ArrayList<PlayerChangeListener>();
+        listeners = new ArrayList<PlayerChangeListener>();
 
-		Language lang = Language.getInstance();
-		lang.addLanguageListener(this);
-		languageChanged(lang);
-	}
+        Language lang = Language.getInstance();
+        lang.addLanguageListener(this);
+        languageChanged(lang);
+    }
 
-	@Override
-	public void languageChanged(Language sender) {
-		btnAddPlayer.setText(sender.get("add player"));
-	}
+    @Override
+    public void languageChanged(Language sender) {
+        btnAddPlayer.setText(sender.get("add player"));
+    }
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == btnAddPlayer) {
-			addPlayerEntry();
-		}
-		if (e.getSource() instanceof PlayerConfigureEntry) {
-			if (e.getActionCommand().equals("remove")) {
-				removePlayerEntry((PlayerConfigureEntry) e.getSource());
-			} else {
-				firePlayerChanged(
-						getIndex((PlayerConfigureEntry) e.getSource()),
-						e.getActionCommand());
-			}
-		}
-	}
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == btnAddPlayer) {
+            addPlayerEntry();
+        }
+        if (e.getSource() instanceof PlayerConfigureEntry) {
+            if (e.getActionCommand().equals("remove")) {
+                removePlayerEntry((PlayerConfigureEntry) e.getSource());
+            } else {
+                firePlayerChanged(
+                        getIndex((PlayerConfigureEntry) e.getSource()),
+                        e.getActionCommand());
+            }
+        }
+    }
 
-	/**
-	 * adds a subscriber
-	 * 
-	 * @param pcl
-	 *            the new subscriber
-	 */
-	public void addPlayerChangeListener(PlayerChangeListener pcl) {
-		listeners.add(pcl);
-	}
+    /**
+     * adds a subscriber
+     * 
+     * @param pcl
+     *            the new subscriber
+     */
+    public void addPlayerChangeListener(PlayerChangeListener pcl) {
+        listeners.add(pcl);
+    }
 
-	/**
-	 * removes a subscriber
-	 * 
-	 * @param pcl
-	 *            the old subscriber
-	 */
-	public void removePlayerChangeListener(PlayerChangeListener pcl) {
-		listeners.remove(pcl);
-	}
+    /**
+     * removes a subscriber
+     * 
+     * @param pcl
+     *            the old subscriber
+     */
+    public void removePlayerChangeListener(PlayerChangeListener pcl) {
+        listeners.remove(pcl);
+    }
 
-	protected void firePlayerChanged(int index, String changeCommand) {
-		for (PlayerChangeListener pcl : listeners) {
-			pcl.playerChanged(this, index, changeCommand);
-		}
-	}
-	
-	protected void firePlayerAdded() {
-		for (PlayerChangeListener pcl : listeners) {
-			pcl.playerAdded(this);
-		}
-	}
-	
-	protected void firePlayerRemoved(int index) {
-		for (PlayerChangeListener pcl : listeners) {
-			pcl.playerRemoved(this, index);
-		}
-	}
+    protected void firePlayerChanged(int index, String changeCommand) {
+        for (PlayerChangeListener pcl : listeners) {
+            pcl.playerChanged(this, index, changeCommand);
+        }
+    }
 
-	private int getIndex(PlayerConfigureEntry source) {
-		for (int i = 0; i < getNPlayerEntries(); i++) {
-			if (source == getPlayerEntry(i))
-				return i;
-		}
-		return 0;
-	}
+    protected void firePlayerAdded() {
+        for (PlayerChangeListener pcl : listeners) {
+            pcl.playerAdded(this);
+        }
+    }
 
-	@Override
-	public void setEnabled(boolean b) {
-		for (int i = 0; i < getNPlayerEntries(); i++) {
-			getPlayerEntry(i).setEnabled(b);
-		}
-		btnAddPlayer.setEnabled(b);
-		super.setEnabled(b);
-	}
+    protected void firePlayerRemoved(int index) {
+        for (PlayerChangeListener pcl : listeners) {
+            pcl.playerRemoved(this, index);
+        }
+    }
 
-	/**
-	 * adds one player entry to the list
-	 * 
-	 * @return the added {@link PlayerListPanel}
-	 */
-	public PlayerConfigureEntry addPlayerEntry() {
-		PlayerConfigureEntry playerConfigureEntry = new PlayerConfigureEntry();
+    private int getIndex(PlayerConfigureEntry source) {
+        for (int i = 0; i < getNPlayerEntries(); i++) {
+            if (source == getPlayerEntry(i))
+                return i;
+        }
+        return 0;
+    }
 
-		int nComponents = content.getComponentCount();
+    @Override
+    public void setEnabled(boolean b) {
+        for (int i = 0; i < getNPlayerEntries(); i++) {
+            getPlayerEntry(i).setEnabled(b);
+        }
+        btnAddPlayer.setEnabled(b);
+        super.setEnabled(b);
+    }
 
-		Language lang = Language.getInstance();
-		String player = lang.get("player");
-		playerConfigureEntry.getPlayerNameField().setText(
-				player + " " + nComponents);
+    /**
+     * adds one player entry to the list
+     * 
+     * @return the added {@link PlayerListPanel}
+     */
+    public PlayerConfigureEntry addPlayerEntry() {
+        PlayerConfigureEntry playerConfigureEntry = new PlayerConfigureEntry();
 
-		playerConfigureEntry.setEnabled(this.isEnabled());
+        int nComponents = content.getComponentCount();
 
-		content.add(playerConfigureEntry, nComponents - 1);
-		content.revalidate();
-		content.repaint();
-		playerConfigureEntry.addActionListener(this);
-		firePlayerAdded();
-		return playerConfigureEntry;
-	}
+        Language lang = Language.getInstance();
+        String player = lang.get("player");
+        playerConfigureEntry.getPlayerNameField().setText(
+                player + " " + nComponents);
 
-	public void addPlayerEntrySilently(PlayerConfigureEntry pce) {
-		pce.setEnabled(this.isEnabled());
-		int nComponents = content.getComponentCount();
-		content.add(pce, nComponents - 1);
-		pce.addActionListener(this);
-		firePlayerAdded();
-	}
+        playerConfigureEntry.setEnabled(this.isEnabled());
 
-	public void removePlayerEntry(PlayerConfigureEntry pce) {
-		int index = getIndex(pce);
-		content.remove(pce);
-		pce.free();
-		firePlayerRemoved(index);
-		content.revalidate();
-		content.repaint();
-	}
+        content.add(playerConfigureEntry, nComponents - 1);
+        content.revalidate();
+        content.repaint();
+        playerConfigureEntry.addActionListener(this);
+        firePlayerAdded();
+        return playerConfigureEntry;
+    }
 
-	public void removeAllPlayerEntries() {
-		int oldLength = getNPlayerEntries();
-		content.removeAll();
-		content.add(btnAddPlayer);
-		for (int i = 0; i < oldLength; i++) {
-			firePlayerRemoved(i);
-		}
-		content.revalidate();
-		content.repaint();
-	}
+    public void addPlayerEntrySilently(PlayerConfigureEntry pce) {
+        pce.setEnabled(this.isEnabled());
+        int nComponents = content.getComponentCount();
+        content.add(pce, nComponents - 1);
+        pce.addActionListener(this);
+        firePlayerAdded();
+    }
 
-	/**
-	 * @return number of player entries
-	 */
-	public int getNPlayerEntries() {
-		return content.getComponentCount() - 1;
-	}
+    public void removePlayerEntry(PlayerConfigureEntry pce) {
+        int index = getIndex(pce);
+        content.remove(pce);
+        pce.free();
+        firePlayerRemoved(index);
+        content.revalidate();
+        content.repaint();
+    }
 
-	/**
-	 * gets one specific player entry
-	 * 
-	 * @param index
-	 *            index of the player entry
-	 * @return the player entry
-	 */
-	public PlayerConfigureEntry getPlayerEntry(int index) {
-		try {
-			return (PlayerConfigureEntry) content.getComponent(index);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
-		}
-	}
+    public void removeAllPlayerEntries() {
+        int oldLength = getNPlayerEntries();
+        content.removeAll();
+        content.add(btnAddPlayer);
+        for (int i = 0; i < oldLength; i++) {
+            firePlayerRemoved(i);
+        }
+        content.revalidate();
+        content.repaint();
+    }
 
-	@Override
-	public void free() {
-		for (int i = 0; i < getNPlayerEntries(); i++) {
-			PlayerConfigureEntry pce = getPlayerEntry(i);
-			pce.free();
-		}
-		removeAllPlayerEntries();
-	}
+    /**
+     * @return number of player entries
+     */
+    public int getNPlayerEntries() {
+        return content.getComponentCount() - 1;
+    }
 
-	/**
-	 * interface to catch events concerning the change of a player entry
-	 * 
-	 * @author Nicolas Winkler
-	 *
-	 */
-	public interface PlayerChangeListener {
-		/**
-		 * invoked when a player entry has changed
-		 * 
-		 * @param sender
-		 *            the {@link PlayerListPanel} that sent the event
-		 * @param i
-		 *            the index of the player entry
-		 * @param changeCommand
-		 *            what has changed
-		 */
-		void playerChanged(PlayerListPanel sender, int i, String changeCommand);
+    /**
+     * gets one specific player entry
+     * 
+     * @param index
+     *            index of the player entry
+     * @return the player entry
+     */
+    public PlayerConfigureEntry getPlayerEntry(int index) {
+        try {
+            return (PlayerConfigureEntry) content.getComponent(index);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 
-		/**
-		 * invoke when a player is added
-		 * 
-		 * @param sender
-		 *            the {@link PlayerListPanel} that sent the event
-		 */
-		void playerAdded(PlayerListPanel sender);
+    @Override
+    public void free() {
+        for (int i = 0; i < getNPlayerEntries(); i++) {
+            PlayerConfigureEntry pce = getPlayerEntry(i);
+            pce.free();
+        }
+        removeAllPlayerEntries();
+    }
 
-		/**
-		 * invoked when a {@link PlayerConfigureEntry} is removed
-		 * 
-		 * @param sender
-		 *            the {@link PlayerListPanel} that sent the event
-		 * @param playerIndex
-		 *            index of the removed panel
-		 */
-		void playerRemoved(PlayerListPanel sender, int playerIndex);
-	}
+    /**
+     * interface to catch events concerning the change of a player entry
+     * 
+     * @author Nicolas Winkler
+     *
+     */
+    public interface PlayerChangeListener {
+        /**
+         * invoked when a player entry has changed
+         * 
+         * @param sender
+         *            the {@link PlayerListPanel} that sent the event
+         * @param i
+         *            the index of the player entry
+         * @param changeCommand
+         *            what has changed
+         */
+        void playerChanged(PlayerListPanel sender, int i, String changeCommand);
+
+        /**
+         * invoke when a player is added
+         * 
+         * @param sender
+         *            the {@link PlayerListPanel} that sent the event
+         */
+        void playerAdded(PlayerListPanel sender);
+
+        /**
+         * invoked when a {@link PlayerConfigureEntry} is removed
+         * 
+         * @param sender
+         *            the {@link PlayerListPanel} that sent the event
+         * @param playerIndex
+         *            index of the removed panel
+         */
+        void playerRemoved(PlayerListPanel sender, int playerIndex);
+    }
 }

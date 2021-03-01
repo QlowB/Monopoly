@@ -10,14 +10,14 @@ package ch.winfor.monopoly.game;
  * 
  */
 public interface Hashable {
-	/**
-	 * creates a value which should represent the objects status
-	 * 
-	 * There should be no collisions i.e. if two objects have the same hash
-	 * value, they should represent the same object and
-	 * {@link Object#equals(Object)} should return <code>true</code>
-	 * 
-	 * @return a 64 bit hash value
-	 */
-	long createHash();
+    /**
+     * creates a value which should represent the objects status
+     * 
+     * There should be no collisions i.e. if two objects have the same hash
+     * value, they should represent the same object and
+     * {@link Object#equals(Object)} should return <code>true</code>
+     * 
+     * @return a 64 bit hash value
+     */
+    long createHash();
 }

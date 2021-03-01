@@ -26,113 +26,113 @@ import ch.winfor.monopoly.res.Ressources;
  * 
  */
 public class PreferencePanel extends ActionPanel implements LanguageListener,
-		ActionListener {
-	/** */
-	private static final long serialVersionUID = -1325238529997300369L;
+        ActionListener {
+    /** */
+    private static final long serialVersionUID = -1325238529997300369L;
 
-	/** description label of {@link #languageComboBox} */
-	private JLabel lblLanguage;
+    /** description label of {@link #languageComboBox} */
+    private JLabel lblLanguage;
 
-	/** language select combo box */
-	private JComboBox<String> languageComboBox;
+    /** language select combo box */
+    private JComboBox<String> languageComboBox;
 
-	/** cancel button */
-	private JButton cancelButton;
+    /** cancel button */
+    private JButton cancelButton;
 
-	/** apply button */
-	private JButton applyButton;
+    /** apply button */
+    private JButton applyButton;
 
-	/** ok button */
-	private JButton okButton;
+    /** ok button */
+    private JButton okButton;
 
-	/** panel containing the upper part of the dialog */
-	private final JPanel contentPanel;
+    /** panel containing the upper part of the dialog */
+    private final JPanel contentPanel;
 
-	/**
-	 * Create the dialog.
-	 */
-	public PreferencePanel() {
-		setLayout(new BorderLayout());
-		contentPanel = new JPanel();
-		add(contentPanel, BorderLayout.CENTER);
-		contentPanel.setLayout(null);
+    /**
+     * Create the dialog.
+     */
+    public PreferencePanel() {
+        setLayout(new BorderLayout());
+        contentPanel = new JPanel();
+        add(contentPanel, BorderLayout.CENTER);
+        contentPanel.setLayout(null);
 
-		languageComboBox = new JComboBox<String>();
-		languageComboBox.setBounds(110, 20, 153, 20);
-		languageComboBox.setModel(new DefaultComboBoxModel<String>(
-				new String[] { "English", "Deutsch" }));
-		contentPanel.add(languageComboBox);
+        languageComboBox = new JComboBox<String>();
+        languageComboBox.setBounds(110, 20, 153, 20);
+        languageComboBox.setModel(new DefaultComboBoxModel<String>(
+                new String[] { "English", "Deutsch" }));
+        contentPanel.add(languageComboBox);
 
-		lblLanguage = new JLabel("Language:");
-		lblLanguage.setLabelFor(languageComboBox);
-		lblLanguage.setBounds(10, 23, 90, 14);
-		contentPanel.add(lblLanguage);
+        lblLanguage = new JLabel("Language:");
+        lblLanguage.setLabelFor(languageComboBox);
+        lblLanguage.setBounds(10, 23, 90, 14);
+        contentPanel.add(lblLanguage);
 
-		JPanel buttonPane = new JPanel();
-		buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
-		add(buttonPane, BorderLayout.SOUTH);
+        JPanel buttonPane = new JPanel();
+        buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
+        add(buttonPane, BorderLayout.SOUTH);
 
-		okButton = new JButton("OK");
-		okButton.addActionListener(this);
-		okButton.setActionCommand("OK");
-		buttonPane.add(okButton);
-		// if (getRootPane() != null)
-		// getRootPane().setDefaultButton(okButton);
+        okButton = new JButton("OK");
+        okButton.addActionListener(this);
+        okButton.setActionCommand("OK");
+        buttonPane.add(okButton);
+        // if (getRootPane() != null)
+        // getRootPane().setDefaultButton(okButton);
 
-		applyButton = new JButton("Apply");
-		applyButton.addActionListener(this);
-		buttonPane.add(applyButton);
+        applyButton = new JButton("Apply");
+        applyButton.addActionListener(this);
+        buttonPane.add(applyButton);
 
-		cancelButton = new JButton("Cancel");
-		cancelButton.addActionListener(this);
-		cancelButton.setActionCommand("Cancel");
-		buttonPane.add(cancelButton);
+        cancelButton = new JButton("Cancel");
+        cancelButton.addActionListener(this);
+        cancelButton.setActionCommand("Cancel");
+        buttonPane.add(cancelButton);
 
-		Language lang = Language.getInstance();
-		languageChanged(lang);
-		lang.addLanguageListener(this);
-	}
+        Language lang = Language.getInstance();
+        languageChanged(lang);
+        lang.addLanguageListener(this);
+    }
 
-	@Override
-	public void languageChanged(Language sender) {
-		lblLanguage.setText(sender.get("language") + ":");
-		okButton.setText(sender.get("ok"));
-		applyButton.setText(sender.get("apply"));
-		cancelButton.setText(sender.get("cancel"));
-	}
+    @Override
+    public void languageChanged(Language sender) {
+        lblLanguage.setText(sender.get("language") + ":");
+        okButton.setText(sender.get("ok"));
+        applyButton.setText(sender.get("apply"));
+        cancelButton.setText(sender.get("cancel"));
+    }
 
-	private void apply() {
-		String language = (String) languageComboBox.getSelectedItem();
-		String filename = "";
-		if (language.equals("English")) {
-			filename = "english.lng";
-		} else if (language.equals("Deutsch")) {
-			filename = "german.lng";
-		}
+    private void apply() {
+        String language = (String) languageComboBox.getSelectedItem();
+        String filename = "";
+        if (language.equals("English")) {
+            filename = "english.lng";
+        } else if (language.equals("Deutsch")) {
+            filename = "german.lng";
+        }
 
-		Language mainLang = Language.getInstance();
-		mainLang.loadLanguage(Ressources.getRessource(filename));
-	}
+        Language mainLang = Language.getInstance();
+        mainLang.loadLanguage(Ressources.getRessource(filename));
+    }
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == okButton) {
-			apply();
-			fireActionEvent("ok");
-		}
-		if (e.getSource() == applyButton) {
-			apply();
-		} else if (e.getSource() == cancelButton) {
-			setVisible(false);
-			fireActionEvent("cancel");
-		}
-	}
-	
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == okButton) {
+            apply();
+            fireActionEvent("ok");
+        }
+        if (e.getSource() == applyButton) {
+            apply();
+        } else if (e.getSource() == cancelButton) {
+            setVisible(false);
+            fireActionEvent("cancel");
+        }
+    }
 
-	/**
-	 * sets the "ok" button as the default
-	 */
-	public void setDefaultButton() {
-		getRootPane().setDefaultButton(okButton);
-	}
+
+    /**
+     * sets the "ok" button as the default
+     */
+    public void setDefaultButton() {
+        getRootPane().setDefaultButton(okButton);
+    }
 }

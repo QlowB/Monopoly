@@ -7,10 +7,10 @@ package ch.winfor.monopoly.game;
  * 
  */
 public class DrawCardField extends Field {
-	/**  */
-	private static final long serialVersionUID = -7027782601640613933L;
+    /**  */
+    private static final long serialVersionUID = -7027782601640613933L;
 
-	public DrawCardField(String name) {
-		super(name);
-	}
+    public DrawCardField(String name) {
+        super(name);
+    }
 }

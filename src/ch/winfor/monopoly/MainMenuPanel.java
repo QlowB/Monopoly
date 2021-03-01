@@ -31,109 +31,109 @@ import ch.winfor.monopoly.Language.LanguageListener;
  */
 public class MainMenuPanel extends ActionPanel {
 
-	/** */
-	private static final long serialVersionUID = -4893226312103119244L;
+    /** */
+    private static final long serialVersionUID = -4893226312103119244L;
 
-	/** the button that starts the game */
-	private JButton btnStartGame;
+    /** the button that starts the game */
+    private JButton btnStartGame;
 
-	/** preferences button */
-	private JButton btnPreferences;
+    /** preferences button */
+    private JButton btnPreferences;
 
-	/** exit game button */
-	private JButton btnExit;
+    /** exit game button */
+    private JButton btnExit;
 
-	/** welcome text to the left */
-	private JLabel lblWelcometext;
+    /** welcome text to the left */
+    private JLabel lblWelcometext;
 
-	/** I hope this variable name is self-explanatory */
-	private static final Color BACKGROUND_COLOR = new Color(255, 239, 213);
+    /** I hope this variable name is self-explanatory */
+    private static final Color BACKGROUND_COLOR = new Color(255, 239, 213);
 
-	/**
-	 * create the panel
-	 */
-	public MainMenuPanel() {
-		setBorder(new EmptyBorder(3, 5, 3, 3));
-		setPreferredSize(new Dimension(500, 300));
-		this.setBackground(BACKGROUND_COLOR);
+    /**
+     * create the panel
+     */
+    public MainMenuPanel() {
+        setBorder(new EmptyBorder(3, 5, 3, 3));
+        setPreferredSize(new Dimension(500, 300));
+        this.setBackground(BACKGROUND_COLOR);
 
-		actionListeners = new ArrayList<ActionListener>();
-		setLayout(new BorderLayout(0, 0));
+        actionListeners = new ArrayList<ActionListener>();
+        setLayout(new BorderLayout(0, 0));
 
-		JPanel panel = new JPanel();
-		panel.setPreferredSize(new Dimension(200, 0));
-		panel.setBackground(new Color(255, 239, 213));
-		panel.setBorder(new LineBorder(new Color(25, 25, 112), 2));
-		this.add(panel, BorderLayout.EAST);
-		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        JPanel panel = new JPanel();
+        panel.setPreferredSize(new Dimension(200, 0));
+        panel.setBackground(new Color(255, 239, 213));
+        panel.setBorder(new LineBorder(new Color(25, 25, 112), 2));
+        this.add(panel, BorderLayout.EAST);
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-		btnStartGame = new JButton("Start Game");
-		btnStartGame.setBackground(getBackground());
-		btnStartGame.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				fireActionEvent("start game");
-			}
-		});
+        btnStartGame = new JButton("Start Game");
+        btnStartGame.setBackground(getBackground());
+        btnStartGame.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                fireActionEvent("start game");
+            }
+        });
 
-		btnExit = new JButton("Exit");
-		btnExit.setBackground(getBackground());
-		btnExit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				fireActionEvent("exit");
-			}
-		});
+        btnExit = new JButton("Exit");
+        btnExit.setBackground(getBackground());
+        btnExit.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                fireActionEvent("exit");
+            }
+        });
 
-		btnPreferences = new JButton("Preferences");
-		btnPreferences.setBackground(getBackground());
-		btnPreferences.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				fireActionEvent("preferences");
-			}
-		});
+        btnPreferences = new JButton("Preferences");
+        btnPreferences.setBackground(getBackground());
+        btnPreferences.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                fireActionEvent("preferences");
+            }
+        });
 
-		panel.add(Box.createRigidArea(new Dimension(0, 10)));
-		panel.add(btnStartGame);
+        panel.add(Box.createRigidArea(new Dimension(0, 10)));
+        panel.add(btnStartGame);
 
-		panel.add(Box.createRigidArea(new Dimension(0, 5)));
-		panel.add(btnPreferences);
-		panel.add(Box.createRigidArea(new Dimension(0, 5)));
-		panel.add(btnExit);
-		btnStartGame.setAlignmentX(Component.CENTER_ALIGNMENT);
-		btnPreferences.setAlignmentX(Component.CENTER_ALIGNMENT);
-		btnExit.setAlignmentX(Component.CENTER_ALIGNMENT);
+        panel.add(Box.createRigidArea(new Dimension(0, 5)));
+        panel.add(btnPreferences);
+        panel.add(Box.createRigidArea(new Dimension(0, 5)));
+        panel.add(btnExit);
+        btnStartGame.setAlignmentX(Component.CENTER_ALIGNMENT);
+        btnPreferences.setAlignmentX(Component.CENTER_ALIGNMENT);
+        btnExit.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-		lblWelcometext = new JLabel("Welcome!");
+        lblWelcometext = new JLabel("Welcome!");
 
-		this.add(lblWelcometext);
+        this.add(lblWelcometext);
 
-		Language lang = Language.getInstance();
-		lang.addLanguageListener(new LanguageListener() {
-			@Override
-			public void languageChanged(Language sender) {
-				setCaptions(sender);
-			}
-		});
-		setCaptions(lang);
-	}
+        Language lang = Language.getInstance();
+        lang.addLanguageListener(new LanguageListener() {
+            @Override
+            public void languageChanged(Language sender) {
+                setCaptions(sender);
+            }
+        });
+        setCaptions(lang);
+    }
 
-	/**
-	 * @return the button "start game"
-	 */
-	public JButton getStartGameButton() {
-		return btnStartGame;
-	}
+    /**
+     * @return the button "start game"
+     */
+    public JButton getStartGameButton() {
+        return btnStartGame;
+    }
 
-	private void setCaptions(Language lang) {
-		btnStartGame.setText(lang.get("start game"));
-		btnPreferences.setText(lang.get("preferences"));
-		btnExit.setText(lang.get("exit"));
-		lblWelcometext.setText(lang.get("welcome_text"));
-	}
+    private void setCaptions(Language lang) {
+        btnStartGame.setText(lang.get("start game"));
+        btnPreferences.setText(lang.get("preferences"));
+        btnExit.setText(lang.get("exit"));
+        lblWelcometext.setText(lang.get("welcome_text"));
+    }
 
-	/**
-	 * sets the "start game" button as the default
-	 */
-	public void setDefaultButton() {
-		getRootPane().setDefaultButton(btnStartGame);
-	}
+    /**
+     * sets the "start game" button as the default
+     */
+    public void setDefaultButton() {
+        getRootPane().setDefaultButton(btnStartGame);
+    }
 }
