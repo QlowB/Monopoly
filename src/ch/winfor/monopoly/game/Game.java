@@ -56,7 +56,7 @@ public class Game implements PlayingPieceListener, PlayerListener,
     private HashMap<String, ShuffledCardDeck> cardDecks;
 
     /** printWriter to write to the game log */
-    private GameLog gameLog;
+    //private GameLog gameLog;
 
     /**
      * creates a new standard monopoly game
@@ -80,7 +80,7 @@ public class Game implements PlayingPieceListener, PlayerListener,
      */
     public Game(final Board board, int nPlayers, OutputStream gameLogStream) {
         this.board = board;
-        this.gameLog = new GameLog("main game", gameLogStream);
+        //this.gameLog = new GameLog("main game", gameLogStream);
 
         random = new Random();
         gameListeners = new ArrayList<GameListener>();
@@ -124,7 +124,7 @@ public class Game implements PlayingPieceListener, PlayerListener,
         }.start();
 
 
-        gameLog.log("initialized game!");
+        //gameLog.log("initialized game!");
     }
 
     /**
